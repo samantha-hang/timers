@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/quiz.js"></script> -->
+    <title>Spongebob Squarepants Quiz</title>
+</head>
+<body>
+
+    <style>
+    #quiz {
+    display:none;
+    }
+
+    h1 {
+    font-size: 100px;
+    }
+
+    body {
+    text-align: center;
+    background-image:url("assets/images/backgroundimage.jpg");
+    background-size: cover;
+    font-family: 'Acme', sans-serif;
+    font-size: 20px;
+    }
+
+    button {
+    background: #34d3d9;
+    background-image: -webkit-linear-gradient(top, #34d3d9, #2980b9);
+    background-image: -moz-linear-gradient(top, #34d3d9, #2980b9);
+    background-image: -ms-linear-gradient(top, #34d3d9, #2980b9);
+    background-image: -o-linear-gradient(top, #34d3d9, #2980b9);
+    background-image: linear-gradient(to bottom, #34d3d9, #2980b9);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    }
+
+    button.hover {
+    background: #34d3d9;
+    background-image: -webkit-linear-gradient(top, #34d3d9, #3498db);
+    background-image: -moz-linear-gradient(top, #34d3d9, #3498db);
+    background-image: -ms-linear-gradient(top, #34d3d9, #3498db);
+    background-image: -o-linear-gradient(top, #34d3d9, #3498db);
+    background-image: linear-gradient(to bottom, #34d3d9, #3498db);
+    text-decoration: none;
+    }
+
+    #start {
+        margin-top: 200px;
+    }
+
+    </style>
+
+    <h1>Spongebob Squarepants Quiz</h1>
+    <br>
+    <button id='start'>Start</button>
+
+    <div id='timer'></div>
+
+    <br>
+
+    <div id='quiz'>
+        <form>
+            <fieldset class="unchecked">
+                <legend>Who is the creator of Spongebob?</legend>
+            <br>
+                <input type="radio" id="bartlett" name="questionOne">
+                <label for="bartlett">Craig Bartlett</label><br/>
+            
+                <input type="radio" id="hillenberg" name="questionOne">
+                <label for="hillenberg">Stephan Hillenberg</label><br/>
+            
+                <input type="radio" id="mccracken" name="questionOne">
+                <label for="mccracken">Craig McCracken</label>
+
+            </fieldset>
+            <br>
+            <fieldset class="unchecked">
+                <legend>What is the name of Spongebob's pet?</legend>
+                <br>
+                <input type="radio" id="gary" name="questionTwo">
+                <label for="gary">Gary</label><br/>
+            
+                <input type="radio" id="bobby" name="questionTwo">
+                <label for="bobby">Bobby</label><br/>
+            
+                <input type="radio" id="larry" name="questionTwo">
+                <label for="larry">Larry</label>
+
+            </fieldset>
+            <br>
+            <fieldset class="unchecked">
+                <legend>What was the Krusty Krab initially known as?</legend>
+                <br>
+                <input type="radio" id="yummykrab" name="questionThree">
+                <label for="yummykrab">Yummy Krab</label><br/>
+            
+                <input type="radio" id="krabbykrab" name="questionThree">
+                <label for="krabbykrab">Krabby Krab</label><br/>
+            
+                <input type="radio" id="rustkrab" name="questionThree">
+                <label for="rustkrab">Rust Krab</label>
+
+            </fieldset>
+            <br>
+            <fieldset class="unchecked">
+                <legend>Is Squidward a squid?</legend>
+                <br>
+                <input type="radio" id="squid" name="questionFour">
+                <label for="squid">Duh, what kind of question is this?</label><br/>
+            
+                <input type="radio" id="octopus" name="questionFour">
+                <label for="octopus">No, he's an octopus</label><br/>
+            
+                <input type="radio" id="cuttlefish" name="questionFour">
+                <label for="cuttlefish">No, he's a cuttlefish</label>
+
+            </fieldset>
+            <br>
+            <fieldset class="unchecked">
+                <legend>How much does Patrick weigh?</legend>
+                <br>
+                <input type="radio" id="pounds" name="questionFive">
+                <label for="pounds">50 lbs</label><br/>
+            
+                <input type="radio" id="ounces" name="questionFive">
+                <label for="ounces">50 oz</label><br/>
+            
+                <input type="radio" id="twoounces" name="questionFive">
+                <label for="twoounces">2 oz</label>
+
+            </fieldset>
+            <br>
+            <fieldset class="unchecked">
+                <legend>How many spots does Squidward have on his forehead?</legend>
+                <br>
+                <input type="radio" id="eight" name="questionSix">
+                <label for="eight">8</label><br/>
+            
+                <input type="radio" id="twelve" name="questionSix">
+                <label for="twelve">12</label><br/>
+            
+                <input type="radio" id="ten" name="questionSix">
+                <label for="ten">10</label>
+
+            </fieldset>
+            <br>
+            <fieldset class="unchecked">
+                <legend>What is Patrick's sister's name?</legend>
+                <br>
+                <input type="radio" id="sam" name="questionSeven">
+                <label for="sam">Sam</label><br/>
+            
+                <input type="radio" id="stephanie" name="questionSeven">
+                <label for="stephanie">Stephanie</label><br/>
+            
+                <input type="radio" id="shirley" name="questionSeven">
+                <label for="shirley">Shirley</label>
+
+            </fieldset>
+            <br>
+            <fieldset class="unchecked">
+                <legend>What is the first episode of Spongebob Squarepants called?</legend>
+                <br>
+                <input type="radio" id="beginning" name="questionEight">
+                <label for="beginning">A New Beginning</label><br/>
+            
+                <input type="radio" id="bikini" name="questionEight">
+                <label for="bikini">Introducing Bikini Bottom</label><br/>
+            
+                <input type="radio" id="help" name="questionEight">
+                <label for="help">Help Wanted</label>
+
+            </fieldset>
+            <br>
+                <fieldset class="unchecked">
+                    <legend>What instrument does Squidward play?</legend>
+                    <br>
+                    <input type="radio" id="flute" name="questionNine">
+                    <label for="flute">Flute</label><br/>
+                
+                    <input type="radio" id="trumpet" name="questionNine">
+                    <label for="trumpet">Trumpet</label><br/>
+                
+                    <input type="radio" id="clarinet" name="questionNine">
+                    <label for="clarinet">Clarinet</label>
+    
+                </fieldset>
+                <br>
+                <fieldset class="unchecked">
+                    <legend>What is Spongebob and Patrick's favorite thing to do?</legend>
+                    <br>
+                    <input type="radio" id="squidward" name="questionTen">
+                    <label for="squidward">Bother Squidward</label><br/>
+                
+                    <input type="radio" id="jellyfishing" name="questionTen">
+                    <label for="jellyfishing">Jellyfishing</label><br/>
+                
+                    <input type="radio" id="krusty" name="questionTen">
+                    <label for="krusty">Hang out at the Krusty Krab</label>
+    
+                </fieldset>
+        </form>
+    </div>
+
+    <br>
+
+    <button id='submit'>Submit Quiz</button>
+
+    <div id ='score'></div>
+    <div id ='losses'></div>
+    <div id ='unanswered'></div>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+var timerDiv = $('#timer');
+var quizDiv = $('#quiz');
+var scoreDiv = $('#score');
+var lossesDiv = $('#losses');
+var unansweredDiv = $('#unanswered');
+var submitButton =$('#submit');
+var score = 0;
+var losses = 0;
+var unanswered = 0;
+
+submitButton.hide();
+
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+    minutes = parseInt(timer / 60, 10);
+    seconds = parseInt(timer % 60, 10);
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    display.text(minutes + ":" + seconds);
+
+    if (--timer < 0) {
+        timer = duration;
+        submitButton.trigger("click");
+        clearTimeout(timer);
+    }
+    }, 1000);
+}
+
+$('#start').click(function() {
+    $('#start').hide();
+    $('#quiz').show();
+    jQuery(function ($) {
+    var minutes = 60 * 1,
+        display = timerDiv;
+    startTimer(minutes, display);
+    });
+
+    submitButton.show();
+  });
+
+// 1.) Make an array of answers
+
+var answers = ['hillenberg', 'gary', 'rustkrab', 'octopus', 'twoounces', 'eight', 'sam', 'help', 
+    'clarinet', 'jellyfishing'];
+// 2.) Make a function to score the user
+
+// function checkUnanswered(){
+//     for (i=0; i<fieldset.length; i++)
+//     {$('#unchecked').find('input[name="questionTen"]:checked')
+
+console.log($('#unchecked').find('input[name="questionTen"]:checked'));
+//     }
+// }
+
+function scoreTest(){
+    $("input:checked").each(function(inputindex) {
+//   console.log( index + ": " + $( this ).text() );
+console.log($(this).attr('id'));
+console.log(answers[inputindex]);
+if ($(this).attr('id') == answers[inputindex]){
+    score++;
+    $('#score').text("Correct: " + score);
+    console.log("score: " + score);
+}else if ($("name:checked") == ''){
+    unanswered++;
+    $('#unanswered').text("Unanswered: " + unanswered);
+}else{
+    losses++;
+    $('#losses').text("Incorrect: " + losses);
+    console.log(losses);
+    }
+        });
+    }
+
+$('#submit').click(function(){
+    scoreTest();
+    clearTimeout(timer);
+    quizDiv.hide();
+    submitButton.hide();
+    timerDiv.hide();
+    scoreDiv.show();
+    lossesDiv.show();
+});
+
+// need to add unanswered questions function here:
+// id for each fieldset
+//  .find('name:checked')
+// match input:checked with length of answers
+// if false, then don't run
+
+// </script>
+
+</body>
+</html>
